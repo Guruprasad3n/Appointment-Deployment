@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
 // for Deployment
 const path = require("path")
-// const path = require("./client/build/index.html")
+// const path = require("./frontend/build/")
 
 // dotenv config
 dotenv.config();
@@ -30,7 +30,6 @@ const doctorRoute = require("./routes/DocRoute");
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/admin", adminRoute);
 app.use("/api/v1/doctor", doctorRoute);
-const abc = require("../frontend/build/index.html")
 
 
 // For Deployment Static FIle From Build or Public
@@ -39,6 +38,7 @@ app.get("*", function(req, res){
 res.sendFile(path.join(__dirname, "./frontend/build/index.html"))
 });
 // -----------------------------
+
 
 
 // listen Port
