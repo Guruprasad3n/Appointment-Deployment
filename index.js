@@ -3,7 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
 // for Deployment
-// const path = require("path")
+const path = require("path")
 
 // dotenv config
 dotenv.config();
@@ -33,10 +33,10 @@ const abc = require("../frontend/build/index.html")
 
 
 // For Deployment Static FIle From Build or Public
-// app.use(express.static(path.join(__dirname, "../frontend/build")))
-// app.get("*", function(req, res){
-// res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
-// });
+app.use(express.static(path.join(__dirname, "../frontend/build")))
+app.get("*", function(req, res){
+res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
+});
 // -----------------------------
 
 
