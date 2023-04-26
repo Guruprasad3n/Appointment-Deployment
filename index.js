@@ -34,9 +34,9 @@ const abc = require("../frontend/build/index.html")
 
 
 // For Deployment Static FIle From Build or Public
-app.use(express.static(path.join(__dirname, "../frontend/build")))
+app.use(express.static(path.join(__dirname, "./frontend/build")))
 app.get("*", function(req, res){
-res.sendFile(path.join(__dirname, "../frontend/build/index.html"))
+res.sendFile(path.join(__dirname, "./frontend/build/index.html"))
 });
 // -----------------------------
 
