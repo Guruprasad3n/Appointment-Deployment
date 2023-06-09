@@ -2,8 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
+const a = require("./frontend/build/index.html");
 // for Deployment
-const path = require("path")
+const path = require("path");
 // const path = require("./frontend/build/")
 
 // dotenv config
@@ -31,15 +32,12 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/admin", adminRoute);
 app.use("/api/v1/doctor", doctorRoute);
 
-
 // For Deployment Static FIle From Build or Public
-app.use(express.static(path.join(__dirname, "./frontend/build")))
-app.get("*", function(req, res){
-res.sendFile(path.join(__dirname, "./frontend/build/index.html"))
+app.use(express.static(path.join(__dirname, "./frontend/build")));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
 });
 // -----------------------------
-
-
 
 // listen Port
 const Port = process.env.PORT;
@@ -48,6 +46,3 @@ const Port = process.env.PORT;
 app.listen(Port, (req, res) => {
   console.log(`Server Runnning in http://localhost:${Port}`);
 });
-
-
-// Link Updated
